@@ -8,6 +8,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+typedef int (*ConversionFunction)(const int i);
+int custom_atoi_wrapper(const int i);
+int convertToDecimal(const int i, int (*converter)(const int));
+
 int _printf(const char *format, ...);
 int print_int(int value, int base);
 void custom_itoa(int num, char *buffer);
@@ -23,6 +27,5 @@ int octalToDecimal(int octal);
 int hexCharToDecimal(char hex);
 int hexadecimalToDecimal(char *hex);
 int binaryToDecimal(int binary);
-
 
 #endif
